@@ -1,0 +1,15 @@
+<h1 style="text-align: center;">{{title}}</h1>
+<input type="text" name="nombre" [(ngModel)]="nombre"><br/>
+<input type="text" name="apellido"[(ngModel)]="apellido"><br/>
+<input type="button" value="Registrar" name="Registrar" (click)="registro()"><br/>
+
+<p *ngIf="registrado; else sinRegistrar">{{mensaje}}{{nombre}}{{apellido}}</p>
+<ng-template #sinRegistrar>
+  <p>Nadie registrado</p>
+
+</ng-template>
+<br/><br/>
+<ul>
+  <li *ngFor="let entrada of entradas; let i=index"><span style="font-size: larger;font-weight: bold;">
+    {{entrada.titulo}}</span>.Entrada {{i+1}}<!--texto: {{entrada.texto}}--></li>
+</ul>
